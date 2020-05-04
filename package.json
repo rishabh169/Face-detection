@@ -1,7 +1,6 @@
 {
   "name": "smart-brain-api",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js"
@@ -16,5 +15,15 @@
     "knex": "^0.21.1",
     "nodemon": "^2.0.3",
     "pg": "^8.0.3"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rishabh169/Face-detection.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rishabh169/Face-detection/issues"
+  },
+  "homepage": "https://github.com/rishabh169/Face-detection#readme",
+  "description": ""
 }
