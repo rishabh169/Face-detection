@@ -5,7 +5,7 @@ const app = express();
 const knex = require('knex');
 const bcrypt = require('bcrypt-nodejs');
 
-var db = require('knex')({
+var db = knex({
   client: 'pg',
   connection: {
     connectionString : process.env.DATABASE_URL,
