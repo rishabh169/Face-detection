@@ -8,10 +8,14 @@ const bcrypt = require('bcrypt-nodejs');
 var db = knex({
   client: 'pg',
   connection: {
-	connectionString: process.env.DATABASE_URL,
-    ssl: true
+	host: '127.0.0.1',
+    user: 'postgres',
+    password : 'root',
+    database : 'smart-brain'
   }
 });
+
+// console.log(db);
 
 
 
@@ -21,6 +25,14 @@ app.use(cors());
 app.get('/' , (req, res) =>{
 	res.json('this is working!');
 });
+
+// app.post('/',(req, res) =>{
+// 	db.select('*').from('users')
+// 	.then(data => {
+// 		res.json('connected');
+// 	})
+// 	.catch(e => res.status(404).json(e));
+// })
 
 app.post('/signin', (req, res)=> {
 	db.select('email','hash').from('login')
@@ -100,6 +112,6 @@ app.put('/images', (req, res) =>{
 	.catch(err => res.status(400).json('unable to get entries'));
 })
 
-app.listen(process.env.PORT || 3000, (req, res)=>{
+app.listen(3000, (req, res)=>{
 	console.log('this is working fine');
 });
